@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>呂紫綺 Tzu-Chi Lu | 個人履歷</title>
+    <title>呂紫綺 Tzu-Chi Lu | 後端工程師個人履歷</title>
     <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 引入 Google Fonts Noto Sans TC -->
@@ -13,10 +13,11 @@
     <style>
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: #ffffff;
+            background-color: #fafafa;
             scroll-behavior: smooth;
             margin: 0;
             padding: 0;
+            color: #1a202c;
         }
         /* 強制所有區塊內容絕對置中 */
         section, footer, header {
@@ -24,141 +25,191 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-left: 24px;
+            padding-right: 24px;
         }
         /* 照片圓形且不變形 */
         .img-circle {
-            width: 150px;
-            height: 150px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #f0f0f0;
-            margin-bottom: 20px;
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 24px;
         }
-        /* 導覽大綱滑鼠效果 */
+        /* 導覽大綱樣式調整 */
         .nav-item {
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: #d1d5db;
-            margin: 10px 20px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #4a5568;
+            margin: 8px 16px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             text-decoration: none;
+            position: relative;
         }
         .nav-item:hover {
             color: #2563eb;
-            transform: scale(1.2);
         }
     </style>
 </head>
 <body>
 
-    <!-- 第一頁：主頁 (絕對置中) -->
-    <header class="h-screen flex flex-col justify-center bg-gray-50">
-        <!-- 照片在正中間 -->
+    <!-- 第一頁：專業主頁（移除 HELLO，聚焦個人專業定位） -->
+    <header class="min-h-screen justify-center bg-gradient-to-b from-gray-50 to-gray-100 py-16">
+        <!-- 個人頭像 -->
         <img src="mycat.jpg" alt="呂紫綺" class="img-circle">
         
-        <h2 class="text-2xl font-bold text-gray-700">呂紫綺 Tzu-Chi Lu</h2>
-        <p class="text-blue-600 font-bold tracking-widest text-sm mb-4">JAVA & MYSQL DEVELOPER</p>
+        <h1 class="text-4xl font-black tracking-tight text-gray-900 mb-2">呂紫綺 Tzu-Chi Lu</h1>
+        <div class="px-4 py-1 bg-blue-600 text-white font-bold tracking-widest text-xs rounded-full uppercase mb-8">
+            Java & MySQL Back-End Developer
+        </div>
         
-        <h1 class="text-8xl font-black text-black mb-10">HELLO.</h1>
+        <!-- 核心專業亮點摘要 (主頁加分項) -->
+        <div class="max-w-xl mx-auto mb-12 bg-white p-6 rounded-xl shadow-sm border border-gray-200/60">
+            <p class="text-gray-600 text-sm leading-relaxed">
+                專注於 <strong>Java 物件導向開發</strong> 與 <strong>MySQL 資料庫設計</strong> 的後端工程師。<br>
+                具備嚴謹的邏輯思維與優異的跨團隊溝通軟實力，致力於編寫高可讀性、易於維護的商務邏輯程式碼。
+            </p>
+        </div>
 
-        <!-- 中文導覽大綱 -->
-        <nav class="flex flex-wrap justify-center max-w-2xl mx-auto">
-            <a href="#about" class="nav-item">關於我</a>
-            <a href="#skills" class="nav-item">專業技能</a>
-            <a href="#projects" class="nav-item">作品展示</a>
-            <a href="#contact" class="nav-item">聯絡方式</a>
+        <!-- 精緻化導覽功能 -->
+        <nav class="flex flex-wrap justify-center max-w-2xl mx-auto border-t border-gray-200 pt-6 w-full">
+            <a href="#about" class="nav-item">職涯焦點</a>
+            <a href="#skills" class="nav-item">核心技術</a>
+            <a href="#projects" class="nav-item">專案實績</a>
+            <a href="#contact" class="nav-item">聯絡管道</a>
         </nav>
     </header>
 
-    <!-- 關於我 -->
-    <section id="about" class="py-20 bg-white">
-        <h2 class="text-4xl font-black mb-10">關於我</h2>
-        <div class="max-w-2xl mx-auto">
-            <h3 class="text-xl font-bold text-blue-600 mb-4 italic">轉職故事</h3>
-            <p class="text-gray-600 leading-loose mb-10">
-                我正踏在轉職開發者的道路上，對新技術充滿強烈的好奇心。<br>
-                我熱衷於將複雜的邏輯拆解為可執行的程式碼，並在解決 Bug 的過程中獲得成就感。<br>
-                相信過往職場的穩定性，能讓我更快速適應工程師的開發節奏。
+    <!-- 關於我（優化為人資愛看的特質包裝） -->
+    <section id="about" class="py-24 bg-white w-full">
+        <h2 class="text-3xl font-black mb-2 text-gray-900">職涯焦點 / About Me</h2>
+        <div class="w-12 h-1 bg-blue-600 mb-12 rounded"></div>
+        
+        <div class="max-w-2xl mx-auto text-left bg-gray-50 p-8 rounded-2xl border border-gray-100">
+            <h3 class="text-lg font-bold text-blue-600 mb-3 flex items-center">
+                <span class="mr-2">💡</span> 轉職契機與工程師思維
+            </h3>
+            <p class="text-gray-600 leading-relaxed mb-8 text-justify">
+                在探索技術的過程中，我發現自己非常熱衷於將複雜的商業邏輯拆解為結構清晰、層次分明的程式碼。在面對 Bug 時，我習慣透過邏輯推理與日誌分析定位問題根源，並在克服挑戰的過程中獲得強烈的成就感。
             </p>
-            <h3 class="text-xl font-bold text-blue-600 mb-4 italic">生活愛好</h3>
-            <p class="text-gray-600 leading-loose">
-                📖 閱讀探索 ｜ ✈️ 旅遊攝影 ｜ 🐈 貓奴生活 ｜ ⚡ 效率研究
+            
+            <h3 class="text-lg font-bold text-blue-600 mb-3 flex items-center">
+                <span class="mr-2">🤝</span> 職場核心優勢
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-justify">
+                過往豐富的職場經歷培養了我卓越的<strong>抗壓性</strong>與<strong>穩定度</strong>，使我能快速融入跨團隊的日常開發節奏。我擅長將技術語言轉化為清晰的溝通資訊，這項軟實力將有助於我在團隊中與產品經理（PM）及前端工程師流暢協作，高效達成業務目標。
             </p>
         </div>
     </section>
 
-    <!-- 專業技能 -->
-    <section id="skills" class="py-20 bg-gray-50">
-        <h2 class="text-4xl font-black mb-16">專業技能</h2>
-        <div class="max-w-3xl w-full mx-auto grid grid-cols-1 gap-8 justify-items-center">
+    <!-- 核心技術（強化專業界定） -->
+    <section id="skills" class="py-24 bg-gray-50 w-full">
+        <h2 class="text-3xl font-black mb-2 text-gray-900">核心技術 / Technical Skills</h2>
+        <div class="w-12 h-1 bg-blue-600 mb-16 rounded"></div>
+        
+        <div class="max-w-3xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
             
             <!-- Java 卡片 -->
-            <div class="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 w-full max-w-2xl">
-                <h4 class="text-2xl font-bold mb-4">Java 程式開發</h4>
-                <p class="text-gray-500 leading-loose mb-6">
-                    掌握物件導向核心概念（封裝、繼承、多型），能編寫邏輯嚴謹、具備高度擴充性的後端程式碼。
-                </p>
-                <div class="flex justify-center gap-2">
-                    <span class="px-4 py-1 bg-blue-50 text-blue-600 rounded-full text-sm font-bold">OOP</span>
-                    <span class="px-4 py-1 bg-blue-50 text-blue-600 rounded-full text-sm font-bold">Backend</span>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 w-full text-left flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="p-2.5 bg-blue-50 text-blue-600 rounded-xl font-black mr-3">Java</div>
+                        <h4 class="text-xl font-bold text-gray-800">Java 核心程式開發</h4>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        紮實掌握物件導向核心概念（封裝、繼承、多型），注重異常處理（Exception Handling）與程式碼複用性，能編寫結構嚴謹且具備良好擴充性的後端商務邏輯。
+                    </p>
+                </div>
+                <div class="flex gap-2">
+                    <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-md text-xs font-bold">OOP 設計</span>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-md text-xs font-bold">例外處理</span>
                 </div>
             </div>
 
             <!-- MySQL 卡片 -->
-            <div class="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 w-full max-w-2xl">
-                <h4 class="text-2xl font-bold mb-4">MySQL 資料庫管理</h4>
-                <p class="text-gray-500 leading-loose mb-6">
-                    熟悉資料庫正規化設計，能編寫 SQL 語法進行 CRUD 操作，並理解索引優化與資料維護的重要性。
-                </p>
-                <div class="flex justify-center gap-2">
-                    <span class="px-4 py-1 bg-blue-50 text-blue-600 rounded-full text-sm font-bold">SQL</span>
-                    <span class="px-4 py-1 bg-blue-50 text-blue-600 rounded-full text-sm font-bold">RDBMS</span>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 w-full text-left flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="p-2.5 bg-blue-50 text-blue-600 rounded-xl font-black mr-3">SQL</div>
+                        <h4 class="text-xl font-bold text-gray-800">MySQL 資料庫管理</h4>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        熟悉關係型資料庫（RDBMS）正規化設計，熟練編寫 SQL 語法進行高效的 CRUD 操作，理解索引（Index）基本原理，具備良好的資料結構設計與維護觀念。
+                    </p>
+                </div>
+                <div class="flex gap-2">
+                    <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-md text-xs font-bold">資料庫正規化</span>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-md text-xs font-bold">Schema 設計</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 作品展示 (新增亮點樣式以觸發更新) -->
-    <section id="projects" class="py-20 bg-white">
-        <h2 class="text-4xl font-black mb-10">作品展示</h2>
-        <div class="max-w-2xl w-full mx-auto space-y-6">
+    <!-- 專案實績（補上具備面試競爭力的專業術語） -->
+    <section id="projects" class="py-24 bg-white w-full">
+        <h2 class="text-3xl font-black mb-2 text-gray-900">專案實績 / Projects</h2>
+        <div class="w-12 h-1 bg-blue-600 mb-16 rounded"></div>
+        
+        <div class="max-w-2xl w-full mx-auto space-y-8 text-left">
             
-            <div class="p-8 border border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-md hover:border-blue-500 transition duration-300 text-left">
-                <div class="flex justify-between items-center mb-2">
-                    <h4 class="text-xl font-bold text-gray-800">Java 管理系統</h4>
-                    <span class="text-xs px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full font-medium">進行中 75%</span>
+            <!-- 專案 1 -->
+            <div class="p-8 border border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-md hover:border-blue-500 transition duration-300">
+                <div class="flex justify-between items-start flex-wrap gap-2 mb-4">
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-1">💻 Java 整合型後端管理系統</h4>
+                        <p class="text-gray-400 text-xs font-medium">獨立開發項目</p>
+                    </div>
+                    <span class="text-xs px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full font-bold tracking-wider">核心架構完成 / 優化中</span>
                 </div>
-                <!-- 額外加入視覺進度條 -->
-                <div class="w-full bg-gray-100 rounded-full h-2 mt-3">
-                    <div class="bg-yellow-500 h-2 rounded-full" style="width: 75%"></div>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4 text-justify">
+                    基於 Java 核心架構開發的後端管理系統，完整實作資料的增刪查改（CRUD）功能。專案中導入標準的分層架構設計，確保商務邏輯與資料存取層分離，並加入完善的輸入驗證與日誌記錄。
+                </p>
+                <div class="w-full bg-gray-100 rounded-full h-1.5 mt-4 mb-2">
+                    <div class="bg-yellow-500 h-1.5 rounded-full" style="width: 80%"></div>
                 </div>
+                <p class="text-gray-400 text-right text-xs">專案進度: 80%</p>
             </div>
 
-            <div class="p-8 border border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-md hover:border-blue-500 transition duration-300 text-left">
-                <div class="flex justify-between items-center mb-2">
-                    <h4 class="text-xl font-bold text-gray-800">個人職涯網頁</h4>
-                    <span class="text-xs px-3 py-1 bg-green-100 text-green-700 rounded-full font-medium">已完成 100%</span>
+            <!-- 專案 2 -->
+            <div class="p-8 border border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-md hover:border-blue-500 transition duration-300">
+                <div class="flex justify-between items-start flex-wrap gap-2 mb-4">
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-1">🌐 個人現代化響應式職涯網頁</h4>
+                        <p class="text-gray-400 text-xs font-medium">前端視覺優化項目</p>
+                    </div>
+                    <span class="text-xs px-3 py-1 bg-green-100 text-green-800 rounded-full font-bold tracking-wider">已完成 Deployment</span>
                 </div>
-                <!-- 額外加入視覺進度條 -->
-                <div class="w-full bg-gray-100 rounded-full h-2 mt-3">
-                    <div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4 text-justify">
+                    運用 Tailwind CSS 框架與 HTML5 獨立建構的雲端個人網站。專案成功整合 GitHub Pages 進行自動化託管與發布（Deployment），具備跨裝置的響應式設計（Responsive Design）與高度可讀的排版架構。
+                </p>
+                <div class="w-full bg-gray-100 rounded-full h-1.5 mt-4 mb-2">
+                    <div class="bg-green-500 h-1.5 rounded-full" style="width: 100%"></div>
                 </div>
+                <p class="text-gray-400 text-right text-xs">專案進度: 100%</p>
             </div>
 
         </div>
     </section>
 
-    <!-- 聯絡方式 -->
-    <footer id="contact" class="py-20 bg-black text-white w-full">
-        <h2 class="text-4xl font-black mb-10">聯絡方式</h2>
-        <div class="text-xl space-y-4 max-w-md mx-auto">
-            <p>Email: <a href="mailto:Tzuchilu0912@gmail.com" class="text-blue-400 hover:underline">Tzuchilu0912@gmail.com</a></p>
-            <p>LINE: <span class="text-gray-300">09-55067583</span></p>
+    <!-- 聯絡管道 -->
+    <footer id="contact" class="py-20 bg-gray-900 text-white w-full">
+        <h2 class="text-3xl font-black mb-2">聯絡管道 / Contact</h2>
+        <div class="w-12 h-1 bg-blue-600 mb-12 rounded"></div>
+        
+        <div class="text-lg space-y-4 max-w-md mx-auto font-medium">
+            <p class="flex items-center justify-center text-gray-300">
+                <span class="mr-3 text-xl">✉️</span> 
+                <a href="mailto:Tzuchilu0912@gmail.com" class="text-blue-400 hover:text-blue-300 hover:underline transition">Tzuchilu0912@gmail.com</a>
+            </p>
+            <p class="flex items-center justify-center text-gray-300">
+                <span class="mr-3 text-xl">💬</span> 
+                LINE ID: <span class="ml-1 text-white">09-55067583</span>
+            </p>
         </div>
-        <p class="mt-20 text-gray-600 text-xs uppercase tracking-widest">© 2026 Tzu-Chi Lu</p>
+        <p class="mt-20 text-gray-500 text-xs uppercase tracking-widest">© 2026 Tzu-Chi Lu · All Rights Reserved</p>
     </footer>
 
 </body>
