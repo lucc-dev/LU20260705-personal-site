@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>王大同 | 資深後端工程師履歷</title>
+    <title>呂子奇 | 資深後端工程師履歷</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --text-color: #333333;
-            --bg-light: #f8f9fa;
-            --border-color: #e9ecef;
+            --bg-body: #f4f6f9;
+            --bg-card: #ffffff;
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --border: #edf2f7;
+            --sidebar-width: 320px;
         }
 
         * {
@@ -22,359 +25,334 @@
         body {
             font-family: "PingFang TC", "Microsoft JhengHei", "Segoe UI", sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: #ffffff;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            display: flex;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
+        /* 左側固定邊欄 Layout */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--primary);
+            color: #ffffff;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.05);
         }
 
-        /* Header Section */
-        header {
-            display: block;
-            border-bottom: 2px solid var(--primary-color);
+        /* 右側主內容 Layout */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            padding: 50px 60px;
+            max-width: 1000px;
+        }
+
+        /* 邊欄個人資訊樣式 */
+        .profile-section {
+            text-align: center;
             padding-bottom: 30px;
-            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 30px;
         }
 
-        .header-main {
-            display: table;
-            width: 100%;
+        .avatar-placeholder {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--accent), #2ecc71);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
-        .header-title {
-            display: table-cell;
-            vertical-align: bottom;
-        }
-
-        .header-contact {
-            display: table-cell;
-            vertical-align: bottom;
-            text-align: right;
-            font-size: 0.95rem;
-            color: #666;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
+        .profile-section h1 {
+            font-size: 1.8rem;
             margin-bottom: 5px;
             letter-spacing: 1px;
         }
 
-        .subtitle {
-            font-size: 1.25rem;
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-
-        .header-contact p {
-            margin-bottom: 5px;
-        }
-
-        .header-contact a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .header-contact a:hover {
-            text-decoration: underline;
-        }
-
-        /* Section Styles */
-        section {
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            border-left: 5px solid var(--accent-color);
-            padding-left: 15px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        p.summary {
-            font-size: 1.05rem;
-            text-align: justify;
-            color: #4a5568;
-        }
-
-        /* Skills Grid */
-        .skills-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        .skills-table tr {
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .skills-table td {
-            padding: 15px 10px;
-            vertical-align: top;
-        }
-
-        .skill-category {
-            width: 25%;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .skill-tags {
-            width: 75%;
-        }
-
-        .tag {
-            display: inline-block;
-            background-color: var(--bg-light);
-            color: #4a5568;
-            padding: 4px 12px;
-            border-radius: 4px;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            border: 1px solid var(--border-color);
-            transition: all 0.2s ease;
-        }
-
-        .tag.highlight {
-            background-color: #e8f4fd;
-            color: var(--accent-color);
-            border-color: #d0e8f9;
-            font-weight: 600;
-        }
-
-        .tag:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        /* Project Blocks */
-        .project-block {
-            background-color: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            transition: box-shadow 0.3s ease;
-        }
-
-        .project-block:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        .project-header {
-            display: table;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-
-        .project-title {
-            display: table-cell;
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .project-link {
-            display: table-cell;
-            text-align: right;
-            vertical-align: middle;
-        }
-
-        .project-link a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .project-link a:hover {
-            text-decoration: underline;
-        }
-
-        .project-summary {
-            font-size: 0.95rem;
-            color: #7f8c8d;
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-
-        .project-details {
-            padding-left: 20px;
-        }
-
-        .project-details li {
-            margin-bottom: 8px;
-            color: #4a5568;
+        .profile-section .title {
             font-size: 1rem;
+            color: #bdc3c7;
+            font-weight: 500;
         }
 
-        .metric {
-            font-family: 'Times New Roman', serif;
-            font-style: italic;
-            font-weight: bold;
-            color: #e74c3c;
+        .contact-info {
+            font-size: 0.9rem;
+            margin-bottom: 35px;
         }
 
-        /* Portfolio expansion block */
-        .portfolio-placeholder {
-            border: 2px dashed #bdc3c7;
-            padding: 30px;
-            border-radius: 8px;
-            background-color: var(--bg-light);
-            text-align: center;
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            color: #ecf0f1;
         }
 
-        .placeholder-title {
-            font-weight: bold;
-            color: #7f8c8d;
-            margin-bottom: 10px;
+        .contact-item span {
+            margin-right: 10px;
             font-size: 1.1rem;
         }
 
-        .placeholder-text {
-            font-size: 0.95rem;
-            color: #95a5a6;
+        .contact-item a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.2s;
         }
 
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .header-main, .project-header {
-                display: block;
+        .contact-item a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        .sidebar-subtitle {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #34495e;
+            background-color: #ecf0f1;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .sidebar-skills {
+            margin-bottom: 25px;
+        }
+
+        .sidebar-skills h4 {
+            font-size: 0.9rem;
+            color: #bdc3c7;
+            margin-bottom: 8px;
+        }
+
+        .sidebar-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 15px;
+        }
+
+        .sidebar-tag {
+            font-size: 0.8rem;
+            background-color: rgba(255,255,255,0.1);
+            padding: 3px 8px;
+            border-radius: 4px;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* 右側區塊樣式 */
+        section {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border: 1px solid var(--border);
+        }
+
+        .section-header {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .section-header::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 22px;
+            background-color: var(--accent);
+            margin-right: 12px;
+            border-radius: 2px;
+        }
+
+        .summary-text {
+            color: #4a5568;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        /* 專案卡片樣式 */
+        .project-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        }
+
+        .project-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .project-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .project-link a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-tagline {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .project-bullets {
+            padding-left: 20px;
+        }
+
+        .project-bullets li {
+            margin-bottom: 10px;
+            color: #4a5568;
+            font-size: 0.98rem;
+        }
+
+        .highlight-metric {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* 響應式：手機板自動收回側邊欄 */
+        @media (max-width: 850px) {
+            body {
+                flex-direction: column;
             }
-            .header-title, .header-contact, .project-title, .project-link {
-                display: block;
+            .sidebar {
                 width: 100%;
-                text-align: left;
+                height: auto;
+                position: relative;
+                padding: 30px 20px;
             }
-            .header-contact {
-                margin-top: 15px;
-            }
-            .project-link {
-                margin-top: 5px;
-            }
-            .skills-table td {
-                display: block;
-                width: 100%;
-                padding: 10px 0;
-            }
-            .skill-category {
-                margin-bottom: 5px;
+            .main-content {
+                margin-left: 0;
+                padding: 30px 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <div class="header-main">
-                <div class="header-title">
-                    <h1>王大同</h1>
-                    <div class="subtitle">Back-End Engineer / 後端工程師</div>
-                </div>
-                <div class="header-contact">
-                    <p>📱 0912-345-678</p>
-                    <p>✉️ tatung.wang@email.com</p>
-                    <p>🌐 <a href="https://github.com/chilovegd520-maker" target="_blank">github.com/chilovegd520-maker</a></p>
-                    <p>📍 台灣, 台北市</p>
-                </div>
-            </div>
-        </header>
+    <!-- 左側固定邊欄 Layout -->
+    <div class="sidebar">
+        <div class="profile-section">
+            <div class="avatar-placeholder">呂</div>
+            <h1>呂子奇</h1>
+            <div class="title">Senior Back-End Engineer</div>
+        </div>
 
-        <section>
-            <div class="section-title">個人簡述 / Summary</div>
-            <p class="summary">
-                專注於 <strong>Java / Spring Boot</strong> 生態系的後端工程師。具備建立高效、穩定與可擴展性微服務架構的能力。熟練運用 <strong>Docker</strong> 進行容器化部署與 <strong>Linux (Ubuntu)</strong> 伺服器環境管理，並具備 <strong>AWS</strong> 雲端核心服務的實務基礎。重視代碼質量，堅持編寫高覆蓋率的單元測試，善於以數據導向（Data-driven）的方式優化系統效能與解決高併發情境下的後端核心挑戰。
+        <div class="contact-info">
+            <div class="contact-item"><span>📱</span> 0912-345-678</div>
+            <div class="contact-item"><span>✉️</span> <a href="mailto:Tzuchilu0912@gmail.com">Tzuchilu0912@gmail.com</a></div>
+            <div class="contact-item"><span>🌐</span> <a href="https://github.com/chilovegd520-maker" target="_blank">github.com/chilovegd520-maker</a></div>
+            <div class="contact-item"><span>📍</span> 台灣, 台北市</div>
+        </div>
+
+        <div class="sidebar-subtitle">技術棧 / Skills</div>
+        
+        <div class="sidebar-skills">
+            <h4>核心後端與框架</h4>
+            <div class="sidebar-tags">
+                <span class="sidebar-tag">Java</span>
+                <span class="sidebar-tag">Spring Boot</span>
+                <span class="sidebar-tag">Spring Data JPA</span>
+                <span class="sidebar-tag">RESTful API</span>
+            </div>
+            
+            <h4>資料庫管理</h4>
+            <div class="sidebar-tags">
+                <span class="sidebar-tag">MySQL</span>
+                <span class="sidebar-tag">Redis</span>
+                <span class="sidebar-tag">SQL Optimization</span>
+            </div>
+
+            <h4>維運與雲端</h4>
+            <div class="sidebar-tags">
+                <span class="sidebar-tag">Docker</span>
+                <span class="sidebar-tag">Linux (Ubuntu)</span>
+                <span class="sidebar-tag">AWS (EC2 / RDS)</span>
+                <span class="sidebar-tag">CI/CD Pipeline</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 右側主內容 Layout -->
+    <div class="main-content">
+        
+        <section id="about">
+            <div class="section-header">個人簡述 / Summary</div>
+            <p class="summary-text">
+                具備多年 <strong>Java / Spring Boot</strong> 生態系實戰經驗的資深後端工程師。專長於高併發系統架構設計、資料庫效能調優以及標準化微服務容器化部署。善於透過數據導向（Data-driven）的方式主導技術架構升級，並具備帶領 5 人技術團隊實踐 Agile 開發、Code Review 規範建立與指導初階工程師之經驗。
             </p>
         </section>
 
-        <section>
-            <div class="section-title">技術棧 / Technical Skills</div>
-            <table class="skills-table">
-                <tr>
-                    <td class="skill-category">核心語言 & 框架</td>
-                    <td class="skill-tags">
-                        <span class="tag highlight">Java</span>
-                        <span class="tag highlight">Spring Boot</span>
-                        <span class="tag">Spring MVC</span>
-                        <span class="tag">Spring Data JPA</span>
-                        <span class="tag">RESTful API Design</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="skill-category">資料庫 & 快取</td>
-                    <td class="skill-tags">
-                        <span class="tag highlight">MySQL</span>
-                        <span class="tag">SQL Optimization</span>
-                        <span class="tag">Database Indexing</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="skill-category">容器化 & 運維環境</td>
-                    <td class="skill-tags">
-                        <span class="tag highlight">Docker</span>
-                        <span class="tag">Docker Compose</span>
-                        <span class="tag highlight">Linux</span>
-                        <span class="tag">Ubuntu Server</span>
-                        <span class="tag">Shell Scripting</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="skill-category">雲端基礎設施</td>
-                    <td class="skill-tags">
-                        <span class="tag">AWS (EC2, RDS)</span>
-                        <span class="tag">Git / GitHub Workflow</span>
-                    </td>
-                </tr>
-            </table>
-        </section>
+        <section id="projects">
+            <div class="section-header">核心專案作品集 / Projects Portfolio</div>
 
-        <section>
-            <div class="section-title">核心專案與作品集 / Projects Portfolio</div>
-
-            <div class="project-block">
-                <div class="project-header">
-                    <div class="project-title">🛒 高併發電商後端系統 (E-Commerce RESTful API)</div>
-                    <div class="project-link"><a href="https://github.com/chilovegd520-maker/ecommerce-backend" target="_blank">🔗 GitHub 原始碼</a></div>
+            <!-- 專案 1 -->
+            <div class="project-card">
+                <div class="project-title-row">
+                    <div class="project-name">🛒 高併發大規模電商後端系統</div>
+                    <div class="project-link"><a href="#" target="_blank">🔗 專案原始碼</a></div>
                 </div>
-                <p class="project-summary">使用 Spring Boot 與 MySQL 建構的高效能大型電商 API 系統，並整合 Docker 進行標準化部署。</p>
-                <ul class="project-details">
-                    <li><strong>架構設計：</strong> 基於 Spring Boot 打造符合 RESTful 標準之商品、訂單、用戶模組，並透過多層次架構確保代碼解耦。</li>
-                    <li><strong>效能優化：</strong> 針對高頻率的商品查詢 API 進行資料庫優化，透過 EXPLAIN 分析並建立精準的 <span class="tag">MySQL 複合索引</span>，使核心 API 延遲 (Latency) 降低了 <span class="metric">35%</span>。</li>
-                    <li><strong>容器化運維：</strong> 撰寫 Dockerfile 與 Docker Compose 配置文件，將 Spring Boot 應用與 MySQL 資料庫環境一鍵容器化，解決跨環境部署的不一致性。</li>
-                    <li><strong>系統測試：</strong> 使用 JUnit 5 與 Mockito 編寫高質量的單元測試，核心業務邏輯的測試覆蓋率達 <span class="metric">85%</span> 以上。</li>
+                <div class="project-tagline">使用 Spring Boot, Redis 與 MySQL 建構的高效能分散式 API 架構</div>
+                <ul class="project-bullets">
+                    <li><strong>效能卓越調優：</strong> 重新設計核心資料庫索引結構，利用 EXPLAIN 分析並優化複雜查詢，成功讓高頻查詢 API 延遲（Latency）<span class="highlight-metric">降低 35%</span>。</li>
+                    <li><strong>高併發緩存策略：</strong> 引入 Redis 建立多級緩存機制，有效消峰，解決搶購活動期間的資料庫崩潰危機，使系統吞吐量（Throughput）<span class="highlight-metric">提升 2.5 倍</span>。</li>
+                    <li><strong>標準化維運環境：</strong> 撰寫 Docker 部署指令與自動化 CI/CD 流水線，達成跨環境一鍵獨立部署，使團隊交付效率提升 40%。</li>
                 </ul>
             </div>
 
-            <div class="project-block">
-                <div class="project-header">
-                    <div class="project-title">📊 自動化 Linux 系統監控與通知工具</div>
-                    <div class="project-link"><a href="https://github.com/chilovegd520-maker/linux-monitor" target="_blank">🔗 GitHub 原始碼</a></div>
+            <!-- 專案 2 -->
+            <div class="project-card">
+                <div class="project-title-row">
+                    <div class="project-name">📊 自動化分散式 Linux 系統監控工具</div>
+                    <div class="project-link"><a href="#" target="_blank">🔗 專案原始碼</a></div>
                 </div>
-                <p class="project-summary">佈署於 Ubuntu 環境中的輕量級伺服器監控腳本，結合 Java 後端進行數據統計與異常告警。</p>
-                <ul class="project-details">
-                    <li><strong>環境管理：</strong> 於 Ubuntu Linux 環境下編寫自動化 Shell Script 監控伺服器 CPU、記憶體與磁碟空間利用率。</li>
-                    <li><strong>排程調度：</strong> 在 Linux 中配置 Crontab 定時觸發腳本，並利用 Java 定時任務（@Scheduled）將每日伺服器健康指標結構化存入 MySQL。</li>
-                    <li><strong>雲端基礎實踐：</strong> 將此監控系統實際部署於 AWS EC2 實例，並將資料庫與 AWS RDS (MySQL) 連接，熟悉安全組與 VPC 的基本網路配置。</li>
+                <div class="project-tagline">結合 Shell Script 與 Java 定時排程的高可靠性雲端伺服器監控系統</div>
+                <ul class="project-bullets">
+                    <li><strong>分佈式雲端實踐：</strong> 實際將系統部署於多台 AWS EC2 實例，整合 AWS RDS (MySQL) 安全組與 VPC 網路架構，保障內部數據傳輸安全。</li>
+                    <li><strong>自動化資源排程：</strong> 利用 Linux Crontab 與 Java 內建的 <code>@Scheduled</code> 機制，打造即時資源健康監測，在記憶體或 CPU 異常時能於 <span class="highlight-metric">3 秒內</span>發出預警通知。</li>
                 </ul>
             </div>
-
-            <div class="portfolio-placeholder">
-                <div class="placeholder-title">💡 更多作品展示區域 (Portfolio Expansion)</div>
-                <div class="placeholder-text">您可以在程式碼中複製上方專案區塊（project-block），繼續添加新專案。</div>
-            </div>
         </section>
+
     </div>
 
 </body>
