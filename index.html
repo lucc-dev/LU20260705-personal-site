@@ -1,226 +1,313 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>呂紫綺 Tzu-Chi Lu | 後端工程師個人履歷</title>
+    <title>呂紫綺 Tzu-Chi Lu | 後端開發工程師</title>
     <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 引入 Google Fonts Noto Sans TC -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 引入 FontAwesome 圖示 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: #fafafa;
-            scroll-behavior: smooth;
-            margin: 0;
-            padding: 0;
-            color: #1a202c;
         }
-        /* 強制所有區塊內容絕對置中 */
-        section, footer, header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding-left: 24px;
-            padding-right: 24px;
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
         }
-        /* 照片圓形且不變形 */
         .img-circle {
-            width: 130px;
-            height: 130px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid #ffffff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            margin-bottom: 24px;
-        }
-        /* 導覽大綱樣式調整 */
-        .nav-item {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #4a5568;
-            margin: 8px 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        .nav-item:hover {
-            color: #2563eb;
+            box-shadow: 0 10px 30px -5px rgba(59, 130, 246, 0.2);
         }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- 置頂導覽列 -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="font-black text-xl tracking-wider text-slate-900 code-font">
+                <span class="text-blue-600">&lt;</span>TzuChi.Lu <span class="text-blue-600">/&gt;</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-sm font-bold text-slate-600 hover:text-blue-600 transition-colors">專業定位</a>
+                <a href="#skills" class="text-sm font-bold text-slate-600 hover:text-blue-600 transition-colors">技術棧</a>
+                <a href="#projects" class="text-sm font-bold text-slate-600 hover:text-blue-600 transition-colors">專案實績</a>
+                <a href="#contact" class="text-sm font-bold text-slate-600 hover:text-blue-600 transition-colors">聯絡管道</a>
+            </div>
+            <!-- 行動裝置簡易導覽 -->
+            <div class="flex md:hidden space-x-4 text-xs font-bold text-slate-500">
+                <a href="#about" class="hover:text-blue-600">定位</a>
+                <a href="#skills" class="hover:text-blue-600">技術</a>
+                <a href="#projects" class="hover:text-blue-600">專案</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- 第一頁：專業主頁 -->
-    <header class="min-h-screen justify-center bg-gradient-to-b from-gray-50 to-gray-100 py-16">
-        <img src="mycat.jpg" alt="呂紫綺" class="img-circle">
+    <header class="min-h-[calc(100vh-4rem)] flex flex-col justify-center items-center bg-gradient-to-b from-slate-50 via-slate-100/50 to-white px-6 py-16 text-center">
+        <div class="mb-6 relative">
+            <!-- 建議：之後可以換成一張背景乾淨、微笑、穿著 smart-casual 的個人形象照 -->
+            <img src="mycat.jpg" alt="呂紫綺" class="img-circle mx-auto" onerror="this.src='https://placehold.co/140x140/3b82f6/ffffff?text=Tzu-Chi'">
+            <span class="absolute bottom-1 right-2 flex h-4 w-4">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-white"></span>
+            </span>
+        </div>
         
-        <h1 class="text-4xl font-black tracking-tight text-gray-900 mb-2">呂紫綺 Tzu-Chi Lu</h1>
-        <div class="px-4 py-1 bg-blue-600 text-white font-bold tracking-widest text-xs rounded-full uppercase mb-8">
-            Cloud-Native Back-End Developer
+        <h1 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mb-3">呂紫綺 Tzu-Chi Lu</h1>
+        <div class="px-4 py-1.5 bg-slate-900 text-blue-400 font-bold tracking-widest text-xs rounded-lg inline-block uppercase mb-8 shadow-md shadow-slate-950/10 code-font">
+            Back-End Developer
         </div>
         
         <!-- 核心專業亮點摘要 -->
-        <div class="max-w-xl mx-auto mb-12 bg-white p-6 rounded-xl shadow-sm border border-gray-200/60">
-            <p class="text-gray-600 text-sm leading-relaxed">
-                專注於 <strong>Spring Boot 後端微服務架構</strong> 的開發者。<br>
-                具備 <strong>Docker 容器化部署</strong>、<strong>AWS 雲端實務</strong> 與 <strong>Redis 快取優化</strong> 能力，<br>
-                熱衷於設計高效能、高擴充性的雲端原生（Cloud-Native）後端系統。
+        <div class="max-w-2xl mx-auto bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200/60 transition-all hover:shadow-md">
+            <p class="text-slate-600 text-sm md:text-base leading-relaxed text-justify md:text-center">
+                專注於 <strong class="text-slate-900 font-bold">Spring Boot 後端應用系統</strong> 開發。<br class="hidden sm:inline">
+                具備獨立處理 <strong class="text-slate-900 font-bold">MySQL 資料庫設計</strong> 與 <strong class="text-slate-900 font-bold">Redis 快取技術整合</strong> 的實務經驗，<br class="hidden sm:inline">
+                並能透過 <strong class="text-slate-900 font-bold">Docker & Docker-compose</strong> 快速建構標準化開發與運行環境。
             </p>
         </div>
 
-        <!-- 導覽功能 -->
-        <nav class="flex flex-wrap justify-center max-w-2xl mx-auto border-t border-gray-200 pt-6 w-full">
-            <a href="#about" class="nav-item">職涯焦點</a>
-            <a href="#skills" class="nav-item">核心技術</a>
-            <a href="#projects" class="nav-item">專案實績</a>
-            <a href="#contact" class="nav-item">聯絡管道</a>
-        </nav>
+        <div class="mt-12 animate-bounce hidden md:block">
+            <a href="#about" class="text-slate-400 hover:text-blue-600 transition-colors">
+                <i class="fa-solid fa-chevron-down text-xl"></i>
+            </a>
+        </div>
     </header>
 
     <!-- 關於我 -->
-    <section id="about" class="py-24 bg-white w-full">
-        <h2 class="text-3xl font-black mb-2 text-gray-900">職涯焦點 / About Me</h2>
-        <div class="w-12 h-1 bg-blue-600 mb-12 rounded"></div>
-        
-        <div class="max-w-2xl mx-auto text-left bg-gray-50 p-8 rounded-2xl border border-gray-100">
-            <h3 class="text-lg font-bold text-blue-600 mb-3 flex items-center">
-                <span class="mr-2">💡</span> 轉職契機與工程師思維
-            </h3>
-            <p class="text-gray-600 leading-relaxed mb-8 text-justify">
-                在探索後端技術的過程中，我深受分散式系統與雲端架構的吸引。從 Java 核心物件導向設計出發，一路延伸至 Spring Boot 微服務開發，並積極掌握 Docker 容器化技術與 AWS 雲端部署。在面對複雜的 Bug 時，我習慣透過邏輯推理、日誌分析與 CLI 工具定位問題根源，致力於編寫兼具高讀性與高併發能力的商務邏輯。
-            </p>
+    <section id="about" class="py-24 bg-white px-6">
+        <div class="max-w-3xl mx-auto flex flex-col items-center">
+            <h2 class="text-3xl font-black mb-2 text-slate-900 tracking-wide">專業定位 / About Me</h2>
+            <div class="w-12 h-1 bg-blue-600 mb-12 rounded-full"></div>
             
-            <h3 class="text-lg font-bold text-blue-600 mb-3 flex items-center">
-                <span class="mr-2">🤝</span> 職場核心優勢
-            </h3>
-            <p class="text-gray-600 leading-relaxed text-justify">
-                過往豐富的職場經歷培養了我卓越的<strong>跨團隊協調能力</strong>與<strong>高抗壓穩定度</strong>。我擅長將複雜的技術架構轉化為清晰的商務語言，這項軟實力將有助於我在工程團隊、產品經理（PM）與前端團隊之間流暢協作，確保雲端服務的高效落地。
-            </p>
+            <div class="w-full text-left bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-100 space-y-8">
+                <div>
+                    <h3 class="text-lg font-bold text-blue-600 mb-3 flex items-center">
+                        <i class="fa-solid fa-terminal mr-2"></i> 紮實的後端開發與測試邏輯
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed text-justify text-sm md:text-base">
+                        我習慣以 Java 物件導向（OOP）思維為核心，逐步推展至 Spring Boot Web 框架。在開發 API 時，我堅持搭配 <strong>Postman 進行嚴謹的接口測試</strong>，確保系統的輸入、輸出與商務邏輯皆符合規格。面對 Bug 時，我能藉由 <strong>Log 訊息</strong> 與程式斷點排查問題，並透過 <strong>Docker 容器化</strong> 技術快速建立與還原乾淨的測試環境，保障代碼交付品質。
+                    </p>
+                </div>
+                
+                <div class="border-t border-slate-200/60 pt-6">
+                    <h3 class="text-lg font-bold text-blue-600 mb-3 flex items-center">
+                        <i class="fa-solid fa-comments mr-2"></i> 跨團隊溝通與軟實力
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed text-justify text-sm md:text-base">
+                        過往多元的職場歷練，鍛鍊出我卓越的<strong>抗壓性</strong>與<strong>系統性溝通能力</strong>。我擅長扮演工程團隊與非技術關係人（如 PM、前端、營運方）之間的橋樑，能將繁複的後端資料結構轉化為清晰易懂的接口規格，確保前後端協作流暢並如期完成產品落地。
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- 核心技術（整合全新現代化 Stack） -->
-    <section id="skills" class="py-24 bg-gray-50 w-full">
-        <h2 class="text-3xl font-black mb-2 text-gray-900">核心技術 / Technical Skills</h2>
-        <div class="w-12 h-1 bg-blue-600 mb-16 rounded"></div>
-        
-        <div class="max-w-4xl w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+    <!-- 核心技術 -->
+    <section id="skills" class="py-24 bg-slate-50 px-6">
+        <div class="max-w-5xl mx-auto flex flex-col items-center">
+            <h2 class="text-3xl font-black mb-2 text-slate-900 tracking-wide">核心技術 / Technical Skills</h2>
+            <div class="w-12 h-1 bg-blue-600 mb-16 rounded-full"></div>
             
-            <!-- 1. 後端開發 (Java & Spring Boot) -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center mb-4">
-                        <div class="p-2 bg-blue-50 text-blue-600 rounded-lg text-sm font-black mr-2">Backend</div>
-                        <h4 class="text-lg font-bold text-gray-800">核心後端開發</h4>
+            <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- 1. 後端開發 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-md duration-300">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <div class="px-2.5 py-1 bg-blue-50 text-blue-600 rounded-lg text-xs font-black mr-2 tracking-wider code-font">BACKEND</div>
+                            <h4 class="text-lg font-bold text-slate-800">核心後端開發</h4>
+                        </div>
+                        <ul class="text-slate-600 text-sm space-y-3 leading-relaxed">
+                            <li class="flex items-start"><span class="text-blue-500 mr-2">•</span><span><strong>Java SE & OOP</strong>：熟練基礎物件導向、例外處理（Exception）與集合類別運用。</span></li>
+                            <li class="flex items-start"><span class="text-blue-500 mr-2">•</span><span><strong>Spring Boot Ecosystem</strong>：熟練運用 Spring Web 建立 RESTful API，並使用 <strong>Lombok</strong> 精簡開發代碼。</span></li>
+                            <li class="flex items-start"><span class="text-blue-500 mr-2">•</span><span><strong>Postman 測試</strong>：熟悉 API 請求與響應分析，能自行編寫測試參數進行介面完整性驗證。</span></li>
+                        </ul>
                     </div>
-                    <ul class="text-gray-500 text-sm space-y-2 leading-relaxed">
-                        <li>• <strong>Java (OOP)</strong>：熟練運用封裝、繼承、多型，具備良好的例外處理觀念。</li>
-                        <li>• <strong>Spring Boot</strong>：熟練架構 RESTful API，並運用 <strong>Lombok</strong> 精簡開發流程。</li>
-                        <li>• <strong>Spring AI</strong>：具備對接大語言模型（LLM）開發生成式 AI 應用的實務經驗。</li>
-                    </ul>
                 </div>
-            </div>
 
-            <!-- 2. 雲端與部署環境 (Linux, Docker, AWS) -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center mb-4">
-                        <div class="p-2 bg-green-50 text-green-600 rounded-lg text-sm font-black mr-2">DevOps</div>
-                        <h4 class="text-lg font-bold text-gray-800">雲端與維運部署</h4>
+                <!-- 2. 資料庫與快取機制 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-md duration-300">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <div class="px-2.5 py-1 bg-purple-50 text-purple-600 rounded-lg text-xs font-black mr-2 tracking-wider code-font">DATA</div>
+                            <h4 class="text-lg font-bold text-slate-800">資料庫與快取</h4>
+                        </div>
+                        <ul class="text-slate-600 text-sm space-y-3 leading-relaxed">
+                            <li class="flex items-start"><span class="text-purple-500 mr-2">•</span><span><strong>MySQL Database</strong>：熟練關係型資料庫設計，包含 Table 欄位規劃與基礎 CRUD 語法編寫。</span></li>
+                            <li class="flex items-start"><span class="text-purple-500 mr-2">•</span><span><strong>Spring Data JPA & JDBC</strong>：具備使用 JPA 進行 ORM 物件關聯映射，以及使用 JDBC 進行基礎 SQL 直連操作的雙軌實作經驗。</span></li>
+                            <li class="flex items-start"><span class="text-purple-500 mr-2">•</span><span><strong>Redis Caching</strong>：理解 NoSQL 機制，能整合 Redis 將高頻率讀取的靜態資料進行快取優化。</span></li>
+                        </ul>
                     </div>
-                    <ul class="text-gray-500 text-sm space-y-2 leading-relaxed">
-                        <li>• <strong>Docker</strong>：掌握容器化技術，能編寫 Dockerfile 進行服務鏡像打包與環境隔離。</li>
-                        <li>• <strong>Linux / Ubuntu</strong>：熟悉 <strong>Linux CLI</strong> 常用指令、使用者權限管理及伺服器環境架構。</li>
-                        <li>• <strong>AWS</strong>：具備雲端服務部署觀念，能獨立於雲端配置並託管 Web 應用。</li>
-                    </ul>
                 </div>
-            </div>
 
-            <!-- 3. 資料庫與高併發 (MySQL, Redis) -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center mb-4">
-                        <div class="p-2 bg-purple-50 text-purple-600 rounded-lg text-sm font-black mr-2">Data</div>
-                        <h4 class="text-lg font-bold text-gray-800">資料庫與快取機制</h4>
+                <!-- 3. 維運與開發工具 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-md duration-300">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <div class="px-2.5 py-1 bg-emerald-50 text-emerald-600 rounded-lg text-xs font-black mr-2 tracking-wider code-font">DEVOPS & OS</div>
+                            <h4 class="text-lg font-bold text-slate-800">環境與維運工具</h4>
+                        </div>
+                        <ul class="text-slate-600 text-sm space-y-3 leading-relaxed">
+                            <li class="flex items-start"><span class="text-emerald-500 mr-2">•</span><span><strong>Docker & Compose</strong>：掌握編寫 Dockerfile、使用 Docker-compose 一鍵建立包含 MySQL/Redis 的本地整合開發環境。</span></li>
+                            <li class="flex items-start"><span class="text-emerald-500 mr-2">•</span><span><strong>Linux / Ubuntu</strong>：熟悉 Linux CLI 基礎環境指令（如檔案管理、進程查看、目錄結構等）。</span></li>
+                            <li class="flex items-start"><span class="text-emerald-500 mr-2">•</span><span><strong>AWS (Basic)</strong>：理解基礎雲端概念，具備基本的 EC2 實例啟動與環境部署觀念。</span></li>
+                        </ul>
                     </div>
-                    <ul class="text-gray-500 text-sm space-y-2 leading-relaxed">
-                        <li>• <strong>MySQL</strong>：熟練關係型資料庫正規化設計、複雜 SQL 語法編寫（CRUD）與 Schema 規劃。</li>
-                        <li>• <strong>Redis</strong>：理解 NoSQL 記憶體資料庫機制，能運用 Redis 實現<strong>資料快取（Caching）</strong>以優化系統讀取效能。</li>
-                    </ul>
                 </div>
-            </div>
 
+            </div>
         </div>
     </section>
 
     <!-- 專案實績 -->
-    <section id="projects" class="py-24 bg-white w-full">
-        <h2 class="text-3xl font-black mb-2 text-gray-900">專案實績 / Projects</h2>
-        <div class="w-12 h-1 bg-blue-600 mb-16 rounded"></div>
-        
-        <div class="max-w-2xl w-full mx-auto space-y-8 text-left">
+    <section id="projects" class="py-24 bg-white px-6">
+        <div class="max-w-3xl mx-auto flex flex-col items-center">
+            <h2 class="text-3xl font-black mb-2 text-slate-900 tracking-wide">專案實績 / Projects</h2>
+            <div class="w-12 h-1 bg-blue-600 mb-16 rounded-full"></div>
             
-            <!-- 專案 1 -->
-            <div class="p-8 border border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-md hover:border-blue-500 transition duration-300">
-                <div class="flex justify-between items-start flex-wrap gap-2 mb-4">
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-800 mb-1">💻 Spring Boot 整合型企業級後端管理系統</h4>
-                        <p class="text-gray-400 text-xs font-medium">獨立開發項目 (含 Docker 容器化 + Redis 快取)</p>
+            <div class="w-full space-y-8 text-left">
+                
+                <!-- 專案 1 (JPA) -->
+                <div class="p-6 md:p-8 border border-slate-200 rounded-2xl bg-white shadow-sm hover:shadow-md hover:border-blue-500 transition duration-300">
+                    <div class="flex justify-between items-start flex-wrap gap-4 mb-4">
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-1">💻 Spring Boot & JPA 整合開發系統</h4>
+                            <p class="text-slate-400 text-xs font-medium">使用 Spring Web, JPA, Lombok, MySQL, Redis, Docker-compose</p>
+                        </div>
+                        <span class="text-xs px-3 py-1 bg-amber-50 text-amber-700 border border-amber-200 rounded-full font-bold tracking-wider">核心功能完成 / 優化中</span>
                     </div>
-                    <span class="text-xs px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full font-bold tracking-wider">核心架構完成 / 優化中</span>
-                </div>
-                <p class="text-gray-600 text-sm leading-relaxed mb-4 text-justify">
-                    基於 <strong>Spring Boot</strong> 框架開發的高效能後端系統。整合 <strong>MySQL</strong> 實作高穩定性的商務資料儲存，並導入 <strong>Redis</strong> 做為快取層以減輕資料庫負載。專案全面使用 <strong>Lombok</strong> 優化程式碼結構，並利用 <strong>Docker</strong> 進行容器化打包，成功部署於 <strong>Ubuntu/Linux</strong> 環境，展現現代化微服務的維運思維。
-                </p>
-                <div class="w-full bg-gray-100 rounded-full h-1.5 mt-4 mb-2">
-                    <div class="bg-yellow-500 h-1.5 rounded-full" style="width: 85%"></div>
-                </div>
-                <p class="text-gray-400 text-right text-xs">專案優化進度: 85%</p>
-            </div>
-
-            <!-- 專案 2 -->
-            <div class="p-8 border border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-md hover:border-blue-500 transition duration-300">
-                <div class="flex justify-between items-start flex-wrap gap-2 mb-4">
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-800 mb-1">🌐 個人現代化雲端響應式網頁</h4>
-                        <p class="text-gray-400 text-xs font-medium">AWS / GitHub 雲端託管項目</p>
+                    
+                    <div class="mb-4 text-slate-600 text-sm md:text-base space-y-2">
+                        <p class="text-justify">
+                            以 <strong class="text-slate-900 font-bold">Spring Boot 3.x</strong> 為核心開發的後端 RESTful 服務。透過 JPA 物件關係映射框架，實現高效且結構嚴謹的 MySQL 資料庫存取。
+                        </p>
+                        <p class="text-slate-800 font-medium">✨ 技術實踐與成果：</p>
+                        <ul class="list-disc pl-5 text-sm space-y-1 text-slate-600">
+                            <li>使用 <strong>Spring Data JPA</strong> 實作動態查詢與關聯 Table 串接，減少傳統手寫 SQL 繁瑣程序並保障可讀性。</li>
+                            <li>整合 <strong>Redis</strong> 作為快取緩衝，將高頻重複讀取的基礎資料（例如分類或設定檔）存於記憶體，減少 MySQL 資料庫的讀取負載。</li>
+                            <li>編寫 <strong>Docker-compose 配置文件</strong>，一鍵拉起本地 MySQL、Redis 以及應用程式容器，簡化團隊本地開發與聯調環境初始化流程。</li>
+                            <li>搭配 <strong>Postman 建立測試案例</strong>，在每次修改程式後進行 API 功能與 HTTP 狀態碼回傳驗證。</li>
+                        </ul>
                     </div>
-                    <span class="text-xs px-3 py-1 bg-green-100 text-green-800 rounded-full font-bold tracking-wider">已完成 Deployment</span>
-                </div>
-                <p class="text-gray-600 text-sm leading-relaxed mb-4 text-justify">
-                    運用 Tailwind CSS 框架與雲端技術獨立建構的個人網站。成功實踐自動化部署（Deployment），網頁設計具備跨裝置的響應式架構（Responsive Design），並與雲端後端服務具備高對接性。
-                </p>
-                <div class="w-full bg-gray-100 rounded-full h-1.5 mt-4 mb-2">
-                    <div class="bg-green-500 h-1.5 rounded-full" style="width: 100%"></div>
-                </div>
-                <p class="text-gray-400 text-right text-xs">專案進度: 100%</p>
-            </div>
 
+                    <div class="bg-slate-100 rounded-full h-2 w-full mt-6 mb-1">
+                        <div class="bg-amber-500 h-2 rounded-full transition-all duration-500" style="width: 85%"></div>
+                    </div>
+                    <p class="text-slate-400 text-right text-xs font-semibold">整體開發進度: 85%</p>
+                </div>
+
+                <!-- 專案 2 (JDBC) -->
+                <div class="p-6 md:p-8 border border-slate-200 rounded-2xl bg-white shadow-sm hover:shadow-md hover:border-blue-500 transition duration-300">
+                    <div class="flex justify-between items-start flex-wrap gap-4 mb-4">
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-1">🔌 Spring Boot & JDBC 底層資料鏈接專案</h4>
+                            <p class="text-slate-400 text-xs font-medium">使用 Spring Web, JDBC, Lombok, MySQL, Redis</p>
+                        </div>
+                        <span class="text-xs px-3 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full font-bold tracking-wider">已完成 Completed</span>
+                    </div>
+
+                    <div class="mb-4 text-slate-600 text-sm md:text-base space-y-2">
+                        <p class="text-justify">
+                            為深入探究 Java 與資料庫最本源的連接機制，特意使用傳統 <strong class="text-slate-900 font-bold">JDBC</strong> 所建構的輕量級後端應用。
+                        </p>
+                        <p class="text-slate-800 font-medium">✨ 技術實踐與成果：</p>
+                        <ul class="list-disc pl-5 text-sm space-y-1 text-slate-600">
+                            <li>深入理解 Connection、PreparedStatement 等 JDBC 核心物件，手寫原生 SQL 語句（DML/DDL），厚實資料庫底層底子。</li>
+                            <li>配合 <strong>Spring Web</strong> 包裝成 RESTful API，並利用 Lombok 套件簡化 Entity/DTO 封裝過程。</li>
+                            <li>同樣搭配 <strong>Redis 快取結構</strong>，練習基礎的 Key-Value 快取淘汰與建立機制。</li>
+                            <li>熟練利用 <strong>Postman</strong> 驗證原生 SQL 執行的正確性與資料完整性。</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-100 rounded-full h-2 w-full mt-6 mb-1">
+                        <div class="bg-emerald-500 h-2 rounded-full transition-all duration-500" style="width: 100%"></div>
+                    </div>
+                    <p class="text-slate-400 text-right text-xs font-semibold">專案進度: 100%</p>
+                </div>
+
+            </div>
         </div>
     </section>
 
     <!-- 聯絡管道 -->
-    <footer id="contact" class="py-20 bg-gray-900 text-white w-full">
-        <h2 class="text-3xl font-black mb-2">聯絡管道 / Contact</h2>
-        <div class="w-12 h-1 bg-blue-600 mb-12 rounded"></div>
-        
-        <div class="text-lg space-y-4 max-w-md mx-auto font-medium">
-            <p class="flex items-center justify-center text-gray-300">
-                <span class="mr-3 text-xl">✉️</span> 
-                <a href="mailto:Tzuchilu0912@gmail.com" class="text-blue-400 hover:text-blue-300 hover:underline transition">Tzuchilu0912@gmail.com</a>
-            </p>
-            <p class="flex items-center justify-center text-gray-300">
-                <span class="mr-3 text-xl">💬</span> 
-                LINE ID: <span class="ml-1 text-white">09-55067583</span>
-            </p>
+    <footer id="contact" class="py-20 bg-slate-950 text-white px-6">
+        <div class="max-w-4xl mx-auto flex flex-col items-center text-center">
+            <h2 class="text-3xl font-black mb-2 tracking-wide">聯絡管道 / Contact</h2>
+            <div class="w-12 h-1 bg-blue-600 mb-12 rounded-full"></div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-lg mx-auto font-medium">
+                <!-- 信箱按鈕 (帶一鍵複製功能) -->
+                <button onclick="copyToClipboard('Tzuchilu0912@gmail.com', '信箱已複製！')" class="flex items-center justify-center p-4 bg-slate-900/50 rounded-xl border border-slate-800 hover:border-blue-500 hover:bg-slate-900 text-slate-300 hover:text-blue-400 transition-all duration-300 group">
+                    <i class="fa-solid fa-envelope mr-3 text-lg group-hover:scale-110 transition-transform"></i> 
+                    <span class="text-sm md:text-base code-font">Tzuchilu0912@gmail.com</span>
+                </button>
+                <!-- Line按鈕 (帶一鍵複製功能) -->
+                <button onclick="copyToClipboard('0955067583', 'LINE ID 已複製！')" class="flex items-center justify-center p-4 bg-slate-900/50 rounded-xl border border-slate-800 hover:border-blue-500 hover:bg-slate-900 text-slate-300 hover:text-blue-400 transition-all duration-300 group">
+                    <i class="fa-solid fa-comments mr-3 text-lg group-hover:scale-110 transition-transform"></i> 
+                    <span class="text-sm md:text-base">LINE ID: <span class="text-white select-all ml-1 code-font">09-55067583</span></span>
+                </button>
+            </div>
+            
+            <p class="mt-24 text-slate-600 text-xs uppercase tracking-widest code-font">© 2026 Tzu-Chi Lu · Back-End Engineer Portfolio</p>
         </div>
-        <p class="mt-20 text-gray-500 text-xs uppercase tracking-widest">© 2026 Tzu-Chi Lu · All Rights Reserved</p>
     </footer>
 
+    <!-- Toast 提示組件 -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-10 opacity-0 bg-slate-900 text-blue-400 border border-blue-500/30 px-5 py-3 rounded-xl shadow-2xl transition-all duration-300 pointer-events-none flex items-center gap-2">
+        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span id="toast-text" class="text-sm font-bold text-white">複製成功！</span>
+    </div>
+
+    <!-- 複製至剪貼簿的 JavaScript 函數 (相容 iFrame 環境) -->
+    <script>
+        function copyToClipboard(text, successMessage) {
+            // 建立一個臨時隱藏的 textarea 進行傳統複製
+            const tempTextArea = document.createElement("textarea");
+            tempTextArea.value = text;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            tempTextArea.setSelectionRange(0, 99999); // 手機端優化
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showToast(successMessage);
+                } else {
+                    console.error("無法複製資訊");
+                }
+            } catch (err) {
+                console.error("複製出錯", err);
+            }
+            
+            document.body.removeChild(tempTextArea);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastText = document.getElementById('toast-text');
+            
+            toastText.textContent = message;
+            
+            // 顯示動畫
+            toast.classList.remove('translate-y-10', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            
+            // 2.5 秒後隱藏
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-10', 'opacity-0');
+            }, 2500);
+        }
+    </script>
 </body>
 </html>
