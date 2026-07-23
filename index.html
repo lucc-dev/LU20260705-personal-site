@@ -16,7 +16,7 @@
     <style>
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: #faf6f0; /* 溫慢的棉麻白底色，極具人文質感 */
+            background-color: #faf6f0; /* 溫暖的棉麻白底色，極具人文質感 */
         }
         .code-font {
             font-family: 'JetBrains Mono', monospace;
@@ -48,19 +48,25 @@
             <a href="#" class="font-black text-lg tracking-wider text-[#2d241e] code-font">
                 <span class="text-[#c96f53]">&lt;</span>TzuChi.Lu <span class="text-[#c96f53]">/&gt;</span>
             </a>
-            <div class="hidden md:flex space-x-8">
+            <div class="hidden md:flex items-center space-x-6">
                 <a href="#about" class="text-sm font-bold text-[#6e6156] hover:text-[#c96f53] transition-colors">專業定位</a>
                 <a href="#skills" class="text-sm font-bold text-[#6e6156] hover:text-[#c96f53] transition-colors">技術棧儀表板</a>
                 <a href="#architecture" class="text-sm font-bold text-[#6e6156] hover:text-[#c96f53] transition-colors">專案架構圖</a>
                 <a href="#workflow" class="text-sm font-bold text-[#6e6156] hover:text-[#c96f53] transition-colors">開發工作流</a>
                 <a href="#projects" class="text-sm font-bold text-[#6e6156] hover:text-[#c96f53] transition-colors">專案實績</a>
                 <a href="#contact" class="text-sm font-bold text-[#6e6156] hover:text-[#c96f53] transition-colors">聯絡管道</a>
+                <!-- GitHub 快捷按鈕 -->
+                <a href="https://github.com/lucc-dev/spa-booking" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-[#2d241e] hover:bg-[#c96f53] text-[#fbeee6] text-xs font-bold rounded-lg transition-colors flex items-center gap-1.5 code-font">
+                    <i class="fa-brands fa-github text-sm"></i> GitHub Repo
+                </a>
             </div>
             <!-- 行動裝置簡易導覽 -->
-            <div class="flex md:hidden space-x-4 text-xs font-bold text-[#6e6156]">
+            <div class="flex md:hidden items-center space-x-3 text-xs font-bold text-[#6e6156]">
                 <a href="#skills" class="hover:text-[#c96f53]">技術</a>
-                <a href="#architecture" class="hover:text-[#c96f53]">架構圖</a>
                 <a href="#projects" class="hover:text-[#c96f53]">專案</a>
+                <a href="https://github.com/lucc-dev/spa-booking" target="_blank" rel="noopener noreferrer" class="p-1.5 bg-[#2d241e] text-white rounded-md">
+                    <i class="fa-brands fa-github"></i>
+                </a>
             </div>
         </div>
     </nav>
@@ -68,7 +74,6 @@
     <!-- 第一頁：暖色調人文專業主頁 -->
     <header class="min-h-[calc(100vh-4rem)] flex flex-col justify-center items-center bg-gradient-to-b from-[#fdfbf7] via-[#faf6f0] to-[#f5eedf]/30 px-6 py-16 text-center">
         <div class="mb-6 relative">
-            <!-- 預設為貓咪照片，若載入失敗則顯示優雅的暖色代位圖 -->
             <img src="mycat.jpg" alt="呂紫綺" class="img-circle mx-auto" onerror="this.src='https://placehold.co/130x130/e3a887/ffffff?text=Tzu-Chi'">
             <span class="absolute bottom-1 right-2 flex h-4 w-4">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -77,8 +82,14 @@
         </div>
         
         <h1 class="text-4xl md:text-5xl font-black tracking-tight text-[#2d241e] mb-3">呂紫綺 Tzu-Chi Lu</h1>
-        <div class="px-4 py-1.5 bg-[#2d241e] text-[#fbeee6] font-bold tracking-widest text-xs rounded-lg inline-block uppercase mb-8 shadow-md shadow-[#2d241e]/10 code-font">
-            Back-End Developer
+        
+        <div class="flex items-center gap-3 mb-8">
+            <div class="px-4 py-1.5 bg-[#2d241e] text-[#fbeee6] font-bold tracking-widest text-xs rounded-lg uppercase shadow-md shadow-[#2d241e]/10 code-font">
+                Back-End Developer
+            </div>
+            <a href="https://github.com/lucc-dev/spa-booking" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-white border border-[#eedec9] hover:border-[#c96f53] text-[#2d241e] hover:text-[#c96f53] font-bold text-xs rounded-lg transition-all flex items-center gap-1.5 shadow-xs code-font">
+                <i class="fa-brands fa-github text-sm"></i> GitHub 專案鏈接
+            </a>
         </div>
         
         <!-- 核心專業亮點摘要 -->
@@ -325,53 +336,55 @@
     <section id="projects" class="py-24 bg-[#faf6f0] px-6">
         <div class="max-w-4xl mx-auto flex flex-col items-center">
             <h2 class="text-3xl font-black mb-2 text-[#2d241e] tracking-wide">專案實績 / Projects</h2>
-            <p class="text-sm text-[#6e6156] mb-12">我目前獨立完成的兩款後端核心專案，點擊專案卡片可展開技術架構與成果</p>
+            <p class="text-sm text-[#6e6156] mb-12">我獨立完成的核心後端專案，點擊專案卡片可展開技術架構與完整 GitHub 原始碼</p>
             <div class="w-12 h-1 bg-[#c96f53] mb-12 rounded-full"></div>
             
             <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                 
-                <!-- 專案 1 (JPA) -->
-                <div onclick="openProjectModal('jpa')" class="p-6 md:p-8 border border-[#eedec9] rounded-2xl bg-white shadow-xs hover:shadow-md hover:border-[#c96f53] cursor-pointer transition duration-300 flex flex-col justify-between">
+                <!-- 專案 1 (SPA 預約系統 - JPA + Redis) -->
+                <div onclick="openProjectModal('spa')" class="p-6 md:p-8 border border-[#eedec9] rounded-2xl bg-white shadow-xs hover:shadow-md hover:border-[#c96f53] cursor-pointer transition duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="flex justify-between items-start mb-4">
-                            <span class="text-[10px] px-2.5 py-1 bg-[#fdf2ee] text-[#c96f53] rounded-md font-bold tracking-wider uppercase code-font">Spring Boot + JPA</span>
-                            <span class="text-xs font-semibold text-emerald-600 flex items-center gap-1"><span class="h-2 w-2 rounded-full bg-emerald-500 inline-block animate-pulse"></span>核心完成 / 優化中</span>
+                            <span class="text-[10px] px-2.5 py-1 bg-[#fdf2ee] text-[#c96f53] rounded-md font-bold tracking-wider uppercase code-font">Spring Boot + JPA + Redis</span>
+                            <span class="text-xs font-semibold text-emerald-600 flex items-center gap-1"><span class="h-2 w-2 rounded-full bg-emerald-500 inline-block animate-pulse"></span>已同步 GitHub</span>
                         </div>
-                        <h4 class="text-xl font-bold text-[#2d241e] mb-3">💻 Spring Boot & JPA 整合開發系統</h4>
+                        <h4 class="text-xl font-bold text-[#2d241e] mb-2 group-hover:text-[#c96f53] transition-colors">💅 SPA 預約系統 (spa-booking)</h4>
                         <p class="text-[#6e6156] text-sm leading-relaxed mb-6 text-justify">
-                            以 Spring Boot 3.x 為核心開發的後端 RESTful 服務。透過 JPA 框架，實現高效且結構嚴謹的 MySQL 資料庫存取，並整合 Redis 快取機制...
+                            以 Spring Boot 為核心開發的 SPA 線上預約系統。透過 RESTful API 提供服務瀏覽與預約邏輯，整合 JPA 資料庫操作與 Redis 快取機制...
                         </p>
                     </div>
                     <div>
-                        <div class="bg-[#faf6f0] rounded-full h-2 w-full mb-1">
-                            <div class="bg-[#c96f53] h-2 rounded-full" style="width: 85%"></div>
-                        </div>
-                        <div class="flex justify-between text-xs text-[#9e8f82] font-semibold">
-                            <span>點擊卡片查看技術細節</span>
-                            <span>進度 85%</span>
+                        <div class="flex items-center justify-between pt-4 border-t border-[#f5eedf]">
+                            <div class="flex items-center gap-2">
+                                <a href="https://github.com/lucc-dev/spa-booking" target="_blank" onclick="event.stopPropagation()" class="px-3 py-1.5 bg-[#2d241e] hover:bg-[#c96f53] text-white text-xs font-bold rounded-lg transition-colors inline-flex items-center gap-1.5 code-font">
+                                    <i class="fa-brands fa-github"></i> GitHub Code
+                                </a>
+                            </div>
+                            <span class="text-xs text-[#9e8f82] font-semibold flex items-center gap-1">
+                                點擊查看細節 <i class="fa-solid fa-arrow-right text-[#c96f53]"></i>
+                            </span>
                         </div>
                     </div>
                 </div>
 
                 <!-- 專案 2 (JDBC) -->
-                <div onclick="openProjectModal('jdbc')" class="p-6 md:p-8 border border-[#eedec9] rounded-2xl bg-white shadow-xs hover:shadow-md hover:border-[#c96f53] cursor-pointer transition duration-300 flex flex-col justify-between">
+                <div onclick="openProjectModal('jdbc')" class="p-6 md:p-8 border border-[#eedec9] rounded-2xl bg-white shadow-xs hover:shadow-md hover:border-[#c96f53] cursor-pointer transition duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="flex justify-between items-start mb-4">
                             <span class="text-[10px] px-2.5 py-1 bg-[#eef5f0] text-emerald-700 rounded-md font-bold tracking-wider uppercase code-font">Spring Boot + JDBC</span>
-                            <span class="text-xs font-semibold text-sky-600 flex items-center gap-1"><span class="h-2 w-2 rounded-full bg-sky-500 inline-block"></span>已完成 Completed</span>
+                            <span class="text-xs font-semibold text-sky-600 flex items-center gap-1"><span class="h-2 w-2 rounded-full bg-sky-500 inline-block"></span>底層測試專案</span>
                         </div>
-                        <h4 class="text-xl font-bold text-[#2d241e] mb-3">🔌 Spring Boot & JDBC 底層資料鏈接專案</h4>
+                        <h4 class="text-xl font-bold text-[#2d241e] mb-2 group-hover:text-[#c96f53] transition-colors">🔌 Spring Boot & JDBC 底層資料鏈接專案</h4>
                         <p class="text-[#6e6156] text-sm leading-relaxed mb-6 text-justify">
                             為深入探究 Java 與資料庫最底層的連接機制，使用原生 JDBC 建構的後端應用。擺脫高階框架的包裝，手寫 SQL (CRUD) 語句...
                         </p>
                     </div>
                     <div>
-                        <div class="bg-[#faf6f0] rounded-full h-2 w-full mb-1">
-                            <div class="bg-[#df9a57] h-2 rounded-full" style="width: 100%"></div>
-                        </div>
-                        <div class="flex justify-between text-xs text-[#9e8f82] font-semibold">
-                            <span>點擊卡片查看技術細節</span>
-                            <span>進度 100%</span>
+                        <div class="flex items-center justify-between pt-4 border-t border-[#f5eedf]">
+                            <span class="text-xs font-bold text-emerald-700 bg-[#eef5f0] px-2.5 py-1 rounded-md">完成度 100%</span>
+                            <span class="text-xs text-[#9e8f82] font-semibold flex items-center gap-1">
+                                點擊查看細節 <i class="fa-solid fa-arrow-right text-[#c96f53]"></i>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -386,20 +399,25 @@
             <h2 class="text-3xl font-black mb-2 tracking-wide">聯絡管道 / Contact</h2>
             <div class="w-12 h-1 bg-[#c96f53] mb-12 rounded-full"></div>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-lg mx-auto font-medium">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-2xl mx-auto font-medium">
                 <!-- 信箱按鈕 (帶一鍵複製功能) -->
                 <button onclick="copyToClipboard('Tzuchilu0912@gmail.com', '信箱已複製！')" class="flex items-center justify-center p-4 bg-[#3d3127] rounded-xl border border-[#4d3f33] hover:border-[#c96f53] hover:bg-[#43362c] text-[#fdfbf7]/80 hover:text-[#fdfbf7] transition-all duration-300 group">
-                    <i class="fa-solid fa-envelope mr-3 text-lg group-hover:scale-110 transition-transform"></i> 
-                    <span class="text-sm md:text-base code-font">Tzuchilu0912@gmail.com</span>
+                    <i class="fa-solid fa-envelope mr-2 text-lg group-hover:scale-110 transition-transform text-[#c96f53]"></i> 
+                    <span class="text-xs md:text-sm code-font truncate">Tzuchilu0912@gmail.com</span>
                 </button>
                 <!-- Line按鈕 (帶一鍵複製功能) -->
                 <button onclick="copyToClipboard('0955067583', 'LINE ID 已複製！')" class="flex items-center justify-center p-4 bg-[#3d3127] rounded-xl border border-[#4d3f33] hover:border-[#c96f53] hover:bg-[#43362c] text-[#fdfbf7]/80 hover:text-[#fdfbf7] transition-all duration-300 group">
-                    <i class="fa-solid fa-comments mr-3 text-lg group-hover:scale-110 transition-transform"></i> 
-                    <span class="text-sm md:text-base">LINE ID: <span class="text-[#fdfbf7] select-all ml-1 code-font">09-55067583</span></span>
+                    <i class="fa-solid fa-comments mr-2 text-lg group-hover:scale-110 transition-transform text-emerald-400"></i> 
+                    <span class="text-xs md:text-sm code-font">LINE: 09-55067583</span>
                 </button>
+                <!-- GitHub 專案庫連按鈕 -->
+                <a href="https://github.com/lucc-dev/spa-booking" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-[#3d3127] rounded-xl border border-[#4d3f33] hover:border-[#c96f53] hover:bg-[#43362c] text-[#fdfbf7]/80 hover:text-[#fdfbf7] transition-all duration-300 group">
+                    <i class="fa-brands fa-github mr-2 text-lg group-hover:scale-110 transition-transform"></i> 
+                    <span class="text-xs md:text-sm code-font">GitHub: spa-booking</span>
+                </a>
             </div>
             
-            <p class="mt-24 text-[#9e8f82] text-xs uppercase tracking-widest code-font">© 2026 Tzu-Chi Lu · Back-End Engineer Portfolio</p>
+            <p class="mt-20 text-[#9e8f82] text-xs uppercase tracking-widest code-font">© 2026 Tzu-Chi Lu · Back-End Engineer Portfolio</p>
         </div>
     </footer>
 
@@ -447,9 +465,12 @@
                 <!-- 動態插入 -->
             </div>
             
-            <div class="border-t border-[#eedec9] pt-6 mt-8 flex justify-end">
-                <button onclick="closeProjectModal()" class="px-6 py-2.5 bg-[#2d241e] text-[#fbeee6] font-bold rounded-xl hover:bg-[#c96f53] transition-colors text-sm">
-                    關閉專案說明
+            <div class="border-t border-[#eedec9] pt-6 mt-8 flex justify-between items-center">
+                <a id="modal-github-link" href="https://github.com/lucc-dev/spa-booking" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-[#2d241e] hover:bg-[#c96f53] text-[#fbeee6] font-bold rounded-xl transition-colors text-xs flex items-center gap-2 code-font">
+                    <i class="fa-brands fa-github text-base"></i> 前往 GitHub 查看專案原始碼
+                </a>
+                <button onclick="closeProjectModal()" class="px-5 py-2 bg-[#faf6f0] text-[#6e6156] font-bold rounded-xl hover:bg-[#eedec9] transition-colors text-xs">
+                    關閉說明
                 </button>
             </div>
         </div>
@@ -498,8 +519,8 @@
                     <p>這是我構建 API 系統的主戰場。我能利用 <strong>Spring Boot 3.x</strong> 的便利架構，快速組裝後端服務：</p>
                     <ul class="list-disc pl-5 space-y-2">
                         <li><strong>RESTful API 設計</strong>：運用 <code>@RestController</code>、<code>@GetMapping</code>、<code>@PostMapping</code> 等註解設計符合業界規範的接口。</li>
-                        <li><strong>依賴注入（DI/IOC）</strong>：熟練運用 <code>@Autowired</code> 與 <code>@Service</code>、<code>@Repository</code> 進行類別間的鬆耦合管理。</li>
-                        <li><strong>代碼精簡（Lombok）</strong>：善用 <code>@Data</code>, <code>@Builder</code> 等註解，在編譯期自動生成 Getter/Setter 與建構子，保持主體程式碼極度乾淨。</li>
+                        <li><strong>依賴注入（DI/IOC）與建構子注入</strong>：遵循現代最佳實踐，善用 Lombok <code>@RequiredArgsConstructor</code> 實作安全的建構子注入（Constructor Injection），搭配 <code>@Service</code>、<code>@Repository</code> 進行類別間鬆耦合管理。</li>
+                        <li><strong>代碼精簡（Lombok）</strong>：善用 <code>@RequiredArgsConstructor</code>, <code>@Data</code>, <code>@Builder</code> 等註解，在編譯期自動生成建構子與 Getter/Setter，保持主體程式碼極度乾淨與高可讀性。</li>
                     </ul>
                 `
             },
@@ -584,32 +605,34 @@
 
         // === 2. 專案詳細資料庫 ===
         const projectData = {
-            jpa: {
-                title: "💻 Spring Boot & JPA 整合開發系統",
-                tag: "SPRING DATA JPA · REDIS · DOCKER-COMPOSE",
+            spa: {
+                title: "💅 SPA 預約系統 (spa-booking)",
+                tag: "SPRING BOOT 3 · JPA · REDIS · GITHUB REPO",
+                github: "https://github.com/lucc-dev/spa-booking",
                 content: `
                     <p class="font-bold text-[#2d241e]">📌 專案背景與開發動機：</p>
                     <p class="text-[#6e6156]">
-                        此專案是我目前技術的整合體。我期望以 <strong>Spring Boot 3.x</strong> 為核心，建立起一個兼具「實用性」與「高可讀性」的後端 RESTful 架構。在開發過程中，我特別重視資料庫操作的高效性，以及環境打包的便利度。
+                        這是我的核心作品 <strong>SPA 線上服務預約系統</strong>。以 <strong>Spring Boot 3.x</strong> 為框架核心，設計出一個具備結構化數據處理與高併發設計思考的 RESTful 預約後端服務。專案原始碼已完全開放於 GitHub：<a href="https://github.com/lucc-dev/spa-booking" target="_blank" class="text-[#c96f53] underline font-bold">lucc-dev/spa-booking</a>。
                     </p>
                     
                     <p class="font-bold text-[#2d241e] mt-4">✨ 關鍵技術實踐（我如何做到）：</p>
                     <ul class="list-disc pl-5 space-y-2 text-[#6e6156]">
-                        <li><strong>物件關係映射（JPA）</strong>：運用 <code>@Entity</code> 快速在 MySQL 建立對應 Table。搭配 <code>JpaRepository</code>，免除手寫 SQL，透過 JPA 動態生成的 CRUD 進行安全操作。</li>
-                        <li><strong>Redis 快取設計</strong>：採用 Cache-Aside 模式。針對高頻率讀取的配置檔、下拉選單進行快取。當快取未命中（Cache Miss）時，才向 MySQL 拿取資料並回寫快取，<strong>顯著提升 API 反應時間並降低資料庫負載</strong>。</li>
-                        <li><strong>Docker-compose 一鍵環境架構</strong>：撰寫 Compose 設定檔，將 MySQL（配置持久化資料夾）與 Redis 封裝在同一個虛擬網域中。這意味著新進開發者只需執行 <code>docker-compose up -d</code>，不需在本機手動配置各類資料庫，即可直接啟用開發。</li>
-                        <li><strong>Postman 功能測試</strong>：針對資料的新增與更新，建立測試用例，反覆驗證輸入不合法（例如為空欄位、格式不對）時，API 能否精準彈回 <code>400 Bad Request</code>。</li>
+                        <li><strong>物件關係映射（Spring Data JPA）</strong>：運用 <code>@Entity</code> 建立合理的資料表映射（如預約單、服務項目、使用者），透過 <code>JpaRepository</code> 快速且安全地執行 CRUD 操作。</li>
+                        <li><strong>Redis 快取設計</strong>：採用 Cache-Aside 模式。針對高頻率讀取的服務選單進行記憶體快取。當 Cache Miss 時才查詢 MySQL，<strong>顯著提升 API 響應速度並減輕 DB 負載</strong>。</li>
+                        <li><strong>Docker-compose 開發環境</strong>：撰寫 Compose 設定檔，將 MySQL 與 Redis 封裝於同一網域，實現跨環境一鍵啟動與獨立開發。</li>
+                        <li><strong>Postman 功能測試</strong>：撰寫完整測試用例，驗證邊界條件（如重複預約、空值欄位），確保 API 回傳標準的 JSON 格式與合規的 HTTP 狀態碼。</li>
                     </ul>
 
-                    <p class="font-bold text-[#2d241e] mt-4">📊 階段性成果與學習收穫：</p>
+                    <p class="font-bold text-[#2d241e] mt-4">📊 成果與學習收穫：</p>
                     <p class="text-[#6e6156]">
-                        目前核心資料讀寫、容器化與 Redis 快取機制均已建立並驗證完成（進度 85%）。此專案極大地磨練了我對 <strong class="text-[#2d241e]">JPA 生命週期</strong> 與 <strong class="text-[#2d241e]">快取一致性問題</strong> 的敏感度，也為我未來接觸更大型的後端專案奠定了健康的底子。
+                        本專案培養了我對後端完整開發流程（從架構規劃、DB 設計、快取優化到 GitHub 版控）的掌握度，展示出我具備獨立完成規範化 RESTful API 系統的能力。
                     </p>
                 `
             },
             jdbc: {
                 title: "🔌 Spring Boot & JDBC 底層資料鏈接專案",
                 tag: "SPRING BOOT · JDBC · MYSQL · NATIVE SQL",
+                github: "https://github.com/lucc-dev",
                 content: `
                     <p class="font-bold text-[#2d241e]">📌 專案背景與開發動機：</p>
                     <p class="text-[#6e6156]">
@@ -619,14 +642,14 @@
                     <p class="font-bold text-[#2d241e] mt-4">✨ 關鍵技術實踐（我如何做到）：</p>
                     <ul class="list-disc pl-5 space-y-2 text-[#6e6156]">
                         <li><strong>親手控制原生 JDBC 連線</strong>：實作 <code>Connection</code> 連接與手動釋放資源。在 <code>PreparedStatement</code> 中使用佔位符 <code>?</code>，<strong>並深入理解這樣做能如何有效防止 SQL 注入攻擊（SQL Injection）</strong>。</li>
-                        <li><strong>原生 SQL 語法錘鍊</strong>：手寫 DML（INSERT, UPDATE, DELETE）與多表關聯 SELECT 語句，徹底厚實了自己的資料庫底層底子.</li>
+                        <li><strong>原生 SQL 語法錘鍊</strong>：手寫 DML（INSERT, UPDATE, DELETE）與多表關聯 SELECT 語句，徹底厚實了自己的資料庫底層底子。</li>
                         <li><strong>DTO 結構手工封裝</strong>：透過 ResultSet 迭代器逐行讀取資料，並手動封裝成 Lombok 的資料載體（Entity / DTO），深入了解高階 ORM 套件背後的原理。</li>
                         <li><strong>API 完整性測試</strong>：同樣藉由 Postman 發送大量不同參數，排查當資料庫回應為空、重複鍵時，手寫邏輯能否妥善捕獲並轉換為標準的 API 反應。</li>
                     </ul>
 
                     <p class="font-bold text-[#2d241e] mt-4">📊 階段性成果與學習收穫：</p>
                     <p class="text-[#6e6156]">
-                        此專案已完全開發完成。這項實踐讓我感到非常踏實！項目讓我對 SQL 底層處理機制有了自信，也讓我在回頭看 JPA 時，更能理解哪些底層行為被高階註解封裝了，這對後續排查複雜的 ORM 資料鏈接效能有不可忽視的幫助。
+                        此專案已完全開發完成。項目讓我對 SQL 底層處理機制有了自信，也讓我在回頭看 JPA 時，更能理解哪些底層行為被高階註解封裝了，這對後續排查複雜的 ORM 資料鏈接效能有不可忽視的幫助。
                     </p>
                 `
             }
@@ -717,6 +740,13 @@
             document.getElementById('modal-tag').textContent = data.tag;
             document.getElementById('modal-title').textContent = data.title;
             document.getElementById('modal-body').innerHTML = data.content;
+            
+            if (data.github) {
+                document.getElementById('modal-github-link').href = data.github;
+                document.getElementById('modal-github-link').classList.remove('hidden');
+            } else {
+                document.getElementById('modal-github-link').classList.add('hidden');
+            }
 
             const overlay = document.getElementById('project-modal-overlay');
             const modal = document.getElementById('project-modal');
